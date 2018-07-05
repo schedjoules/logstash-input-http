@@ -76,7 +76,7 @@ public class MessageProcessor implements RejectableRunnable {
 
     private FullHttpResponse generateResponse(Map<String, String> stringHeaders) {
 
-        final ByteBuf payload = Unpooled.wrappedBuffer("ok".getBytes(charset));
+        final ByteBuf payload = Unpooled.wrappedBuffer("{\"message\": \"ok\"}".getBytes(charset));
         final FullHttpResponse response = new DefaultFullHttpResponse(
                 req.protocolVersion(),
                 HttpResponseStatus.OK,
